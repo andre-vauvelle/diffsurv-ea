@@ -1,4 +1,4 @@
-# diffsurv
+# Diffsurv: Differentiable Sorting for Censored Time-to-event Data
 
 This is an inital release for the code behind the paper DIFFSURV: Differentiable Sorting for Censored Time-to-event Data presented at ICLR 2023, time-series representation learning for health workshop.
 
