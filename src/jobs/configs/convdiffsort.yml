@@ -1,0 +1,39 @@
+fit:
+  trainer:
+    logger:
+      - class_path: pytorch_lightning.loggers.WandbLogger
+        init_args:
+          log_model: True
+          tags:
+            - conv
+            - risk
+            - diffsort
+            - case-control-sampling
+            - svnh
+            - topk-experiment
+    callbacks:
+      - class_path: pytorch_lightning.callbacks.ModelCheckpoint
+        init_args:
+          auto_insert_metric_name: False
+          monitor: val/topk
+          filename: '{epoch}-{hp_metric:.4f}'
+    val_check_interval: 0.25
+    max_steps: 100_000
+    log_every_n_steps: 200
+    enable_checkpointing: True
+    num_sanity_val_steps: 0
+    accumulate_grad_batches: 1
+  data:
+    wandb_artifact: anon/anon/SVNH_beta1_cen0.3:v0
+    batch_size: 8
+    risk_set_size: 128
+    val_batch_size: 128
+    num_workers: 8
+  model:
+    lr: 0.0003
+    sorting_network: bitonic
+    distribution: cauchy
+    ignore_censoring: false
+    optimize_topk: false
+    optimize_combined: false
+    norm_risk: false

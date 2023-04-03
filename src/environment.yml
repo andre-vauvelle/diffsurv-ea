@@ -1,0 +1,20 @@
+name: diffsurv
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - ipython
+  - torchmetrics
+  - pytorch>=1.13.0
+  - pandas
+  - wandb>=0.13.4
+  - pre-commit
+  - python-dotenv
+  - dill
+  - pytorch-lightning>=1.7.7
+  - numba
+  - pip:
+      - pysurvival
+      - pycox # optional
+      - jsonargparse[signatures]
+      - diffsort
