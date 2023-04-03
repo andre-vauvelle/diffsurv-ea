@@ -1,8 +1,10 @@
 # diffsurv
 
+This is an inital release for the code behind the paper DIFFSURV: Differentiable Sorting for Censored Time-to-event Data presented at ICLR 2023, time-series representation learning for health workshop.
+
 ## Install
 ```{bash}
-conda create -n diffsurv python=3.8.5
+conda create -n diffsurv python=3.9.15
 cd /path/to/diffsurv/
 conda env update -f src/requirements.yaml
 ```
